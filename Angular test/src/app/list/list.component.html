@@ -1,0 +1,43 @@
+<div class="container mt-5" style="margin-top: 20px;">
+  
+    <div class="row mt-5">
+      <div class="">
+        <button routerLink="/adduser"  class="btn btn-primary mt-5  gap-2 align-items-center" style="background: #005dac; color: #FFF;">Add_User</button> 
+        <button  class="btn btn-primary mt-5 mx-2" (click)="downloadPDF()">
+          <mat-icon aria-hidden="true" mat-raised-button matTooltip="Print"
+          aria-label="Button that displays a tooltip when focused or hovered over">print
+      </mat-icon>
+        </button>
+        <button class="btn btn-primary mt-5 mx-2" (click)="viewPDF()">View PDF</button>
+      
+    </div>
+     
+<table class="table mt-5" id="table" #content>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Address</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of userData;index as i">
+        <th scope="row">{{i+1}}</th>
+        <td>{{data.name}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.phone_number}}</td>
+        <td>{{data.address}}</td>
+        <td><button class="btn btn-primary" (click)="editusers(data)">Edit</button>
+            
+          &nbsp;<button class="btn btn-danger" (click)="deleteusers(data._id)">Delete</button>
+        </td>
+       
+      </tr>
+    </tbody>
+  </table>
+    </div></div>
+
+    

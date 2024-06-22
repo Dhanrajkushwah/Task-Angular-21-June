@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-md-6 offset-md-3">
+        <div class="card my-5">
+         
+          <form class="card-body cardbody-color p-lg-5" [formGroup]="userform">
+            <h1 class="text-center">User Details</h1>
+            <div class="mb-3">
+                <input type="text"  id="name" formControlName="name" class="form-control" placeholder="Username"
+                [ngClass]="{'is-invalid': userform.controls['name'].errors && ckDep }" />
+                <small *ngIf="userform.controls['name'].errors && ckDep" class="text-danger">Enter Your Username
+                </small>
+            </div>
+            <div class="mb-3">
+                <input type="text"  id="email" formControlName="email" class="form-control" placeholder="Email"
+                [ngClass]="{'is-invalid': userform.controls['email'].errors && ckDep }" />
+                <small *ngIf="userform.controls['email'].errors && ckDep" class="text-danger">Enter Your Email
+                </small>
+            </div>
+            <div class="mb-3">
+                <input type="text"  id="phone_number" formControlName="phone_number" class="form-control" placeholder="Phone Number"
+                [ngClass]="{'is-invalid': userform.controls['phone_number'].errors && ckDep }" />
+                <small *ngIf="userform.controls['phone_number'].errors && ckDep" class="text-danger">Enter Your Phone Number
+                </small>
+            </div>
+            <div class="mb-3">
+                <input type="text"  id="address" formControlName="address" class="form-control" placeholder="Address"
+                [ngClass]="{'is-invalid': userform.controls['address'].errors && ckDep }" />
+                <small *ngIf="userform.controls['address'].errors && ckDep" class="text-danger">Enter Your Address
+                </small>
+            </div>
+            <div class="text-center"><button *ngIf="!data" class="btn btn-submit" (click)="AddUsers()" class="btn btn-color px-5 mb-5 w-100">Submit</button></div>
+            <div class="text-center"><button *ngIf="data" class="btn btn-submit" (click)="updateuser()" class="btn btn-color px-5 mb-5 w-100">Update</button></div>
+           
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
